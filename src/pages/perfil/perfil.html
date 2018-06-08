@@ -1,0 +1,186 @@
+<!--
+  Generated template for the PerfilPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Perfil</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="logOut()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      <div text-center>
+      Tu perfil en Fit Lunch
+    </div>
+    </ion-list-header>
+
+    <ion-item (click)="updateName()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>Nombre </ion-col>
+          <ion-col col-6 *ngIf="userProfile?.firstName || userProfile?.lastName">
+            {{userProfile?.firstName}} {{userProfile?.lastName}}
+          </ion-col>
+          <ion-col col-6 class="placeholder-profile" *ngIf="!userProfile?.firstName">
+            <span> Edita este campo. </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item (click)="updateCelular()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>Celular </ion-col>
+          <ion-col col-6 *ngIf="userProfile?.celular">
+            {{userProfile?.celular}}
+          </ion-col>
+          <ion-col col-6 class="placeholder-profile" *ngIf="!userProfile?.celular">
+            <span> Edita este campo. </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="dob-label">Proximo Cumpleaños</ion-label>
+      <ion-datetime displayFormat="MMM D, YYYY" pickerFormat="D MMM YYYY" [(ngModel)]="birthDate" (ionChange)="updateDOB(birthDate)"></ion-datetime>
+    </ion-item>
+    <ion-item (click)="updateEmail()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6> Email </ion-col>
+          <ion-col col-6 *ngIf="userProfile?.email">
+            {{userProfile?.email}}
+          </ion-col>
+          <ion-col col-6 class="placeholder-profile" *ngIf="!userProfile?.email">
+            <span> Edita este campo. </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item (click)="updatePassword()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6> Contraseña </ion-col>
+          <ion-col col-6 class="placeholder-profile">
+            <span> Cambiar contraseña. </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <!-- <ion-item (click)="actualizarZona()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6> Zona </ion-col>
+          <ion-col col-6 *ngIf="userProfile?.zona">
+            {{userProfile?.zona}}
+          </ion-col>
+          <ion-col col-6 class="placeholder-profile"  *ngIf="!userProfile?.zona">
+            <span> Edita este campo. </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item> -->
+
+    <!-- <ion-item (click)="actualizarDireccion()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6> Dirección </ion-col>
+          <ion-col col-6 *ngIf="userProfile?.direccion">
+            {{userProfile?.direccion}} - {{userProfile?.detalleDireccion}}
+          </ion-col>
+          <ion-col col-6 class="placeholder-profile"  *ngIf="!userProfile?.direccion">
+            <span> Edita este campo. </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item> -->
+
+    <ion-item (click)="escogeCiudad()">
+      <ion-grid>
+        <ion-row>
+          <ion-col>Escoger Ciudad </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <!-- <ion-item (click)="gestionDireccion()">
+      <ion-grid>
+        <ion-row>
+          <ion-col>Eliminar direcciones </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item> -->
+
+    <ion-list>
+      <div text-center>
+        <ion-fab right edge>
+          <button ion-fab mini color="secondary" (click)="anadirDireccion()"><ion-icon name="add"></ion-icon></button>
+        </ion-fab>
+        <h3>Direcciones</h3>
+    </div>
+      <ion-item *ngFor="let event of almuerzosUser" text-wrap>
+        <p>Dirección: {{event?.direccion}}</p>
+        <p>Detalle: {{event?.detalle}}</p>
+        <p>Zona: {{event?.zona}}</p>
+        <button ion-button icon-only clear item-right (click)="gestionDireccion(event)"><ion-icon name="trash"></ion-icon></button>
+    </ion-item>
+    </ion-list>
+
+    <ion-grid>
+      <ion-row>
+        <button ion-button block color="secondary" (click)="detectaMembresia()">Ingresar codigo del plan</button>
+      </ion-row>
+    </ion-grid>
+
+    <ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6> Plan: </ion-col>
+          <ion-col col-6 *ngIf="userProfile?.membresia">
+            {{userProfile?.membresia}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6> Almuerzos: </ion-col>
+          <ion-col col-6 *ngIf="userProfile?.almuerzos">
+            {{userProfile?.almuerzos}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-grid>
+      <ion-row>
+        <button ion-button block color="danger" (click)="borrarCuenta()">Eliminar mi Cuenta</button>
+      </ion-row>
+    </ion-grid>
+
+  </ion-list>
+
+  <p>Tu plan debes consumirlo en un Periodo de dos meses.</p>
+
+</ion-content>

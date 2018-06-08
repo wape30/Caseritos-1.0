@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "1047334742952",
+    "firebase_url": "https://fitlunch-app.firebaseio.com",
+    "project_id": "fitlunch-app",
+    "storage_bucket": "fitlunch-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1047334742952:android:d9e8351d6e5ee5ae",
+        "android_client_info": {
+          "package_name": "com.hidramedia.fitlunch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1047334742952-turp5er1onrl7vspvd4d8kkqi65g4f0i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hidramedia.fitlunch",
+            "certificate_hash": "a4154ea023dd919709bafc9bd928362a6e75e6fd"
+          }
+        },
+        {
+          "client_id": "1047334742952-u8flufmbbd1vim92e4mjglv4lkcidt36.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7w7M_4uj4-K7GJcfqGXFhMVTNSTKFaOg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1047334742952-cgbabguhr3k6eeh70dlmort9089d7grm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.hidramedia.fitlunch"
+              }
+            },
+            {
+              "client_id": "1047334742952-u8flufmbbd1vim92e4mjglv4lkcidt36.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

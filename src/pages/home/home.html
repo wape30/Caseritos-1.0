@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Inicio
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-slides *ngIf="imageListInicio" autoplay="5000"pager="true" loop="true" speed="300">
+
+      <ion-slide *ngFor="let event of imageListInicio">
+        <img src={{event?.imagen}}>
+      </ion-slide>
+
+    </ion-slides>
+</ion-content>
+
+<!-- <ion-nav id="nav" #content [root]="rootPage"></ion-nav> -->

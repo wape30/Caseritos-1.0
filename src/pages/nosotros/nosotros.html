@@ -1,0 +1,25 @@
+<!--
+  Generated template for the NosotrosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>    <ion-title>Nosotros</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="nosotros-content"  padding>
+  <ion-slides *ngIf="imageListNosotros" autoplay="5000"pager="true" loop="true" speed="300">
+
+      <ion-slide *ngFor="let event of imageListNosotros">
+        <img src={{event?.imagen}}>
+      </ion-slide>
+
+    </ion-slides>
+</ion-content>
